@@ -1,0 +1,93 @@
+# =============================================
+# .htaccess — Dahara Yoga e Constelação Familiar
+# =============================================
+
+# -----------------------------------------
+# 1) Forçar HTTPS (HTTP → HTTPS 301)
+# -----------------------------------------
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# -----------------------------------------
+# 2) Redirecionar www → sem www (301)
+# -----------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# -----------------------------------------
+# 3) Página 404 personalizada
+# -----------------------------------------
+ErrorDocument 404 /index.html
+
+# -----------------------------------------
+# 4) Compressão GZIP
+# -----------------------------------------
+<IfModule mod_deflate.c>
+  # HTML
+  AddOutputFilterByType DEFLATE text/html
+  # CSS
+  AddOutputFilterByType DEFLATE text/css
+  # JavaScript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE text/javascript
+  # SVG
+  AddOutputFilterByType DEFLATE image/svg+xml
+  # JSON
+  AddOutputFilterByType DEFLATE application/json
+  # XML
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+  # Fontes Web
+  AddOutputFilterByType DEFLATE application/font-woff
+  AddOutputFilterByType DEFLATE application/font-woff2
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# -----------------------------------------
+# 5) Cache de Navegador (Browser Caching)
+# -----------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Imagens: 1 mês
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+
+  # CSS e JS: 1 dia
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+
+  # Fontes: 1 mês
+  ExpiresByType font/woff "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 month"
+  ExpiresByType application/font-woff "access plus 1 month"
+  ExpiresByType application/font-woff2 "access plus 1 month"
+
+  # HTML: sem cache (sempre buscar versão nova)
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Headers adicionais para HTML (no-cache, must-revalidate)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # Headers de segurança básicos
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

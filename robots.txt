@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Permitir crawlers de IA (importante para visibilidade em buscas com IA em 2026)
+User-agent: GPTBot
+Allow: / 
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://daharayogaeconstelacaofamiliar.com.br/sitemap.xml

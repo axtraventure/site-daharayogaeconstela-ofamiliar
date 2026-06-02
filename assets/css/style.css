@@ -1,0 +1,51 @@
+/* Custom styles for Dahara Yoga e Constelação Familiar */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset to prevent sticky header from covering titles */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #353738;
+  background-color: #F9FAFB;
+  overflow-x: hidden;
+}
+
+/* Custom premium transitions */
+.transition-smooth {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ken Burns effect for Hero section */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1) translate(-1%, -1%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 20s infinite ease-in-out;
+}
+
+/* Glassmorphism details */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-header {
+  background: rgba(240, 240, 240, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
