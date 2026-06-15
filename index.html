@@ -347,10 +347,14 @@
   <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 glass-header border-b border-lineColor/50 w-full transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
       <!-- Logo -->
-      <a href="#hero" class="flex items-center gap-2 sm:gap-3">
-        <img src="assets/img/logo-principal.png" alt="Dahara Yoga e Constelação Familiar" class="h-14 sm:h-16 w-auto object-contain shrink-0" width="180" height="49">
-        <span class="font-title font-semibold text-titleMain text-xs sm:text-sm leading-tight lg:hidden block">
-          Dahara Yoga e <br class="hidden sm:block">Constelação Familiar
+      <a href="#hero" class="flex items-center shrink-0 z-10">
+        <img src="assets/img/logo-principal.png" alt="Dahara Yoga e Constelação Familiar" class="h-10 sm:h-16 w-auto object-contain" width="180" height="49">
+      </a>
+
+      <!-- Mobile Brand Name (Centered) -->
+      <a href="#hero" class="absolute inset-x-0 text-center lg:hidden flex flex-col justify-center items-center pointer-events-auto px-16">
+        <span class="font-title font-semibold text-titleMain text-[13px] sm:text-sm leading-tight">
+          Dahara Yoga e<br class="hidden sm:block"> Constelação Familiar
         </span>
       </a>
 
@@ -376,9 +380,9 @@
       </div>
 
       <!-- Mobile Menu Toggle Button -->
-      <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden p-2 text-primary hover:text-primaryHover focus:outline-none" aria-label="Toggle navigation menu">
-        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden p-2 mr-1 sm:mr-0 text-primary hover:text-primaryHover focus:outline-none z-10" aria-label="Toggle navigation menu">
+        <svg x-show="!mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg x-show="mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
 
