@@ -1000,33 +1000,20 @@
           </div>
         </div>
 
-        <!-- Localização Card (Right) -->
-        <div class="lg:w-1/2 w-full h-[400px] lg:h-auto rounded-2xl overflow-hidden border border-lineColor shadow relative group">
-          <a href="https://maps.app.goo.gl/UxfiwZmLcEXBAUcN8" target="_blank" rel="noopener noreferrer" class="block w-full h-full relative">
-            <!-- Mapa estático via Google Static Maps API -->
-            <img
-              src="https://maps.googleapis.com/maps/api/staticmap?center=R.+Roque+Giovanelli,+275,+S%C3%A3o+Jos%C3%A9+do+Rio+Pardo,+SP&zoom=16&size=800x500&maptype=roadmap&markers=color:purple%7CR.+Roque+Giovanelli,+275,+S%C3%A3o+Jos%C3%A9+do+Rio+Pardo,+SP&key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
-              alt="Mapa de localização Dahara Yoga e Constelação Familiar - R. Roque Giovanelli, 275, São José do Rio Pardo - SP"
-              class="w-full h-full object-cover"
-              onerror="this.onerror=null; this.src='assets/img/og-image.jpg'; this.style.objectPosition='center';"
-            >
-            <!-- Overlay com informações -->
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent flex flex-col justify-end p-6 transition-opacity duration-300">
-              <div class="bg-white/95 rounded-xl p-4 shadow-lg">
-                <div class="flex items-start gap-3 mb-3">
-                  <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                  <div>
-                    <p class="font-semibold text-titleMain text-sm">Dahara Yoga e Constelação Familiar</p>
-                    <p class="text-xs text-textMain mt-0.5">R. Roque Giovanelli, 275 - José Maldonado Peres</p>
-                    <p class="text-xs text-textMain">São José do Rio Pardo - SP, CEP 13727-272</p>
-                  </div>
-                </div>
-                <span class="inline-flex items-center justify-center gap-2 w-full bg-primary hover:bg-primaryHover text-white text-xs font-semibold py-2.5 px-4 rounded-lg transition-smooth">
-                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  Abrir no Google Maps
-                </span>
-              </div>
-            </div>
+        <!-- Google Maps Embed (Right) -->
+        <div class="lg:w-1/2 w-full h-[400px] lg:h-auto rounded-2xl overflow-hidden border border-lineColor shadow relative">
+          <a href="https://maps.app.goo.gl/UxfiwZmLcEXBAUcN8" target="_blank" rel="noopener noreferrer" class="block w-full h-full relative z-10">
+            <div class="absolute inset-0 bg-transparent cursor-pointer z-20"></div>
+            <iframe 
+              src="https://maps.google.com/maps?q=R.+Roque+Giovanelli,+275+-+Jos%C3%A9+Maldonado+Peres,+S%C3%A3o+Jos%C3%A9+do+Rio+Pardo+-+SP&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0; pointer-events: none;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de localização Dahara Yoga e Constelação Familiar">
+            </iframe>
           </a>
         </div>
       </div>
